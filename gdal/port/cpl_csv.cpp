@@ -1334,6 +1334,7 @@ typedef struct
 const char * GDALDefaultCSVFilename( const char *pszBasename )
 
 {
+  CPLError(CE_Failure, CPLE_AppDefined, "HIHIHIHI");
 /* -------------------------------------------------------------------- */
 /*      Do we already have this file accessed?  If so, just return      */
 /*      the existing path without any further probing.                  */
