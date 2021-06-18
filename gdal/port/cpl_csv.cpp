@@ -30,6 +30,9 @@
 #include "cpl_port.h"
 #include "cpl_csv.h"
 
+#include <iostream>
+#include <fstream>
+
 #include <cstddef>
 #include <cstdlib>
 #include <cstring>
@@ -1335,6 +1338,12 @@ const char * GDALDefaultCSVFilename( const char *pszBasename )
 
 {
   CPLError(CE_Failure, CPLE_AppDefined, "HIHIHIHI");
+  std::ifstream f("assets:/gdal_data/gcs.csv");
+  if (f.is_open()) {
+    CPLError(CE_Failure, CPLE_AppDefined, "FILE OPEN");
+  } else {
+    CPLError(CE_Failure, CPLE_AppDefined, "FILE NOT OPEN");
+  }
 /* -------------------------------------------------------------------- */
 /*      Do we already have this file accessed?  If so, just return      */
 /*      the existing path without any further probing.                  */
