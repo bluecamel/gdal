@@ -757,7 +757,7 @@ SHPTreeDiskHandle SHPOpenDiskTree( const char* pszQIXFilename,
     hDiskTree = (SHPTreeDiskHandle) calloc(sizeof(struct SHPDiskTreeInfo),1);
 
     if (psHooks == NULL)
-        SASetupDefaultHooks( &(hDiskTree->sHooks) );
+        gdal_SASetupDefaultHooks( &(hDiskTree->sHooks) );
     else
         memcpy( &(hDiskTree->sHooks), psHooks, sizeof(SAHooks) );
 
@@ -955,7 +955,7 @@ SHPSearchDiskTree( FILE *fp,
     struct SHPDiskTreeInfo sDiskTree;
     memset(&sDiskTree.sHooks, 0, sizeof(sDiskTree.sHooks));
 
-    /* We do not use SASetupDefaultHooks() because the FILE* */
+    /* We do not use gdal_SASetupDefaultHooks() because the FILE* */
     /* is a libc FILE* */
     sDiskTree.sHooks.FSeek = SHPTreeSeekLibc;
     sDiskTree.sHooks.FRead = SHPTreeReadLibc;
@@ -1114,7 +1114,7 @@ int SHPAPI_CALL SHPWriteTree(SHPTree *tree, const char *filename )
 {
     SAHooks sHooks;
 
-    SASetupDefaultHooks( &sHooks );
+    gdal_SASetupDefaultHooks( &sHooks );
 
     return SHPWriteTreeLL(tree, filename, &sHooks);
 }
@@ -1133,7 +1133,7 @@ int SHPWriteTreeLL(SHPTree *tree, const char *filename, SAHooks* psHooks )
     SAHooks sHooks;
     if (psHooks == NULL)
     {
-        SASetupDefaultHooks( &sHooks );
+        gdal_SASetupDefaultHooks( &sHooks );
         psHooks = &sHooks;
     }
 

@@ -538,7 +538,7 @@ SHPOpen( const char * pszLayer, const char * pszAccess )
 {
     SAHooks sHooks;
 
-    SASetupDefaultHooks( &sHooks );
+    gdal_SASetupDefaultHooks( &sHooks );
 
     return SHPOpenLL( pszLayer, pszAccess, &sHooks );
 }
@@ -1223,7 +1223,7 @@ SHPCreate( const char * pszLayer, int nShapeType )
 {
     SAHooks sHooks;
 
-    SASetupDefaultHooks( &sHooks );
+    gdal_SASetupDefaultHooks( &sHooks );
 
     return SHPCreateLL( pszLayer, nShapeType, &sHooks );
 }

@@ -180,7 +180,7 @@ SBNSearchHandle SBNOpenDiskTree( const char* pszSBNFilename,
                         calloc(sizeof(struct SBNSearchInfo),1);
 
     if (psHooks == NULL)
-        SASetupDefaultHooks( &(hSBN->sHooks) );
+        gdal_SASetupDefaultHooks( &(hSBN->sHooks) );
     else
         memcpy( &(hSBN->sHooks), psHooks, sizeof(SAHooks) );
 

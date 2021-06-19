@@ -460,7 +460,7 @@ DBFOpen( const char * pszFilename, const char * pszAccess )
 {
     SAHooks sHooks;
 
-    SASetupDefaultHooks( &sHooks );
+    gdal_SASetupDefaultHooks( &sHooks );
 
     return DBFOpenLL( pszFilename, pszAccess, &sHooks );
 }
@@ -769,7 +769,7 @@ DBFCreateEx( const char * pszFilename, const char* pszCodePage )
 {
     SAHooks sHooks;
 
-    SASetupDefaultHooks( &sHooks );
+    gdal_SASetupDefaultHooks( &sHooks );
 
     return DBFCreateLL( pszFilename, pszCodePage , &sHooks );
 }

@@ -247,10 +247,10 @@ int VSI_SHP_Remove( const char *pszFilename )
 }
 
 /************************************************************************/
-/*                        SASetupDefaultHooks()                         */
+/*                      gdal_SASetupDefaultHooks()                      */
 /************************************************************************/
 
-void SASetupDefaultHooks( SAHooks *psHooks )
+void gdal_SASetupDefaultHooks( SAHooks *psHooks )
 
 {
     psHooks->FOpen   = VSI_SHP_Open;

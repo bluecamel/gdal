@@ -165,7 +165,7 @@ typedef struct {
 
 void SHPAPI_CALL SASetupDefaultHooks( SAHooks *psHooks );
 #ifdef SHPAPI_UTF8_HOOKS
-void SHPAPI_CALL SASetupUtf8Hooks( SAHooks *psHooks );
+void SHPAPI_CALL gdal_SASetupUtf8Hooks( SAHooks *psHooks );
 #endif
 
 /************************************************************************/
